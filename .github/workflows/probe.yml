@@ -5,21 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "### CREATE 6.0.x"
-          curl -s https://maven.createmod.net/com/simibubi/create/create-1.21.1/maven-metadata.xml | grep -oE "<version>[^<]+" | sed 's/<version>//' | grep -E "^6\.0\.(6|7|8|9)-" | tr '\n' ' '; echo
-          curl -s https://maven.createmod.net/com/simibubi/create/create-1.21.1/maven-metadata.xml | grep -E "<latest>|<release>"
-          echo "### REGISTRATE MC1.21"
-          for r in https://maven.ithundxr.dev/mirror https://maven.createmod.net https://maven.ithundxr.dev/releases https://maven.ithundxr.dev/snapshots; do
-            echo "-- $r"
-            curl -s $r/com/tterrag/registrate/Registrate/maven-metadata.xml | grep -oE "<version>[^<]+" | sed 's/<version>//' | grep -E "MC1\.21" | tr '\n' ' '; echo
-          done
+          echo "### POM"
+          curl -s https://maven.createmod.net/com/simibubi/create/create-1.21.1/6.0.11-320/create-1.21.1-6.0.11-320.pom | grep -E -B1 -A3 "<artifactId>(Ponder|flywheel|Registrate)" | grep -E "artifactId|version" | tr -d ' ' | tr '\n' ' '; echo
+          echo "### PONDER last"
+          curl -s https://maven.createmod.net/net/createmod/ponder/Ponder-NeoForge-1.21.1/maven-metadata.xml | grep -E "<latest>|<release>"
           echo "### jar checks"
-          for v in "MC1.21-1.3.0%2B62" "MC1.21-1.3.0+62"; do
-            for r in https://maven.ithundxr.dev/mirror https://maven.createmod.net https://maven.ithundxr.dev/releases; do
-              echo "$r $v -> $(curl -s -o /dev/null -w '%{http_code}' "$r/com/tterrag/registrate/Registrate/$v/Registrate-$v.pom")"
-            done
-          done
-          echo "### create pom check"
-          for v in 6.0.6-150 6.0.11-320 6.0.10-281; do
-            echo "$v -> $(curl -s -o /dev/null -w '%{http_code}' https://maven.createmod.net/com/simibubi/create/create-1.21.1/$v/create-1.21.1-$v.pom)"
-          done
+          echo "slim: $(curl -s -o /dev/null -w '%{http_code}' https://maven.createmod.net/com/simibubi/create/create-1.21.1/6.0.11-320/create-1.21.1-6.0.11-320-slim.jar)"
+          echo "reg+62: $(curl -s -o /dev/null -w '%{http_code}' 'https://maven.ithundxr.dev/snapshots/com/tterrag/registrate/Registrate/MC1.21-1.3.0+62/Registrate-MC1.21-1.3.0+62.jar')"
+          echo "reg+67: $(curl -s -o /dev/null -w '%{http_code}' 'https://maven.ithundxr.dev/snapshots/com/tterrag/registrate/Registrate/MC1.21-1.3.0+67/Registrate-MC1.21-1.3.0+67.jar')"
