@@ -153,14 +153,12 @@ public class KasaneTeto extends AbstractVillager {
         if (hand == InteractionHand.MAIN_HAND) {
             player.awardStat(Stats.TALKED_TO_VILLAGER);
         }
-        if (!getOffers().isEmpty()) {
-            if (!level().isClientSide) {
-                setTradingPlayer(player);
-                openTradingScreen(player, getDisplayName(), 1);
-            }
-            return InteractionResult.sidedSuccess(level().isClientSide);
+        // getOffers() so pode ser chamado no servidor (no cliente lanca excecao e derruba o jogo)
+        if (!level().isClientSide && !getOffers().isEmpty()) {
+            setTradingPlayer(player);
+            openTradingScreen(player, getDisplayName(), 1);
         }
-        return super.mobInteract(player, hand);
+        return InteractionResult.sidedSuccess(level().isClientSide);
     }
 
     private void feed(Player player, ItemStack bread) {
