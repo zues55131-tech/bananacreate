@@ -1,0 +1,13 @@
+name: Sondar versoes
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "### PONDER 1.0.7x-9x"
+          curl -s https://maven.createmod.net/net/createmod/ponder/Ponder-NeoForge-1.21.1/maven-metadata.xml | grep -oE "<version>[^<]+" | sed 's/<version>//' | grep -E "^1\.0\.(7|8|9)" | tr '\n' ' '; echo
+          echo "### NEOFORGE 21.1.2xx"
+          curl -s https://maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml | grep -oE "<version>21\.1\.[0-9]+<" | sed 's/<version>//;s/<//' | sort -t. -k3 -n | tail -8 | tr '\n' ' '; echo
+          echo "### ponder pom 1.0.82"
+          echo "$(curl -s -o /dev/null -w '%{http_code}' https://maven.createmod.net/net/createmod/ponder/Ponder-NeoForge-1.21.1/1.0.82/Ponder-NeoForge-1.21.1-1.0.82.pom)"
