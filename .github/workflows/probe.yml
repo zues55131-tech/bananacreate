@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "### PONDER 1.0.7x-9x"
-          curl -s https://maven.createmod.net/net/createmod/ponder/Ponder-NeoForge-1.21.1/maven-metadata.xml | grep -oE "<version>[^<]+" | sed 's/<version>//' | grep -E "^1\.0\.(7|8|9)" | tr '\n' ' '; echo
-          echo "### NEOFORGE 21.1.2xx"
-          curl -s https://maven.neoforged.net/releases/net/neoforged/neoforge/maven-metadata.xml | grep -oE "<version>21\.1\.[0-9]+<" | sed 's/<version>//;s/<//' | sort -t. -k3 -n | tail -8 | tr '\n' ' '; echo
-          echo "### ponder pom 1.0.82"
-          echo "$(curl -s -o /dev/null -w '%{http_code}' https://maven.createmod.net/net/createmod/ponder/Ponder-NeoForge-1.21.1/1.0.82/Ponder-NeoForge-1.21.1-1.0.82.pom)"
+          echo "### ponder dirs"
+          curl -s https://maven.createmod.net/net/createmod/ponder/ | grep -oE 'href="[^"]+"' | tr '\n' ' '; echo
+          for a in Ponder-NeoForge-1.21.1 Ponder-Common-1.21.1 Ponder-1.21.1; do
+            echo "### $a"
+            curl -s https://maven.createmod.net/net/createmod/ponder/$a/maven-metadata.xml | grep -E "<latest>|<release>" | tr -d ' \n'; echo
+          done
+          echo "### create 6.0.10-281 pom deps"
+          curl -s https://maven.createmod.net/com/simibubi/create/create-1.21.1/6.0.10-281/create-1.21.1-6.0.10-281.pom | grep -E "artifactId|<version>" | tr -d ' ' | tr '\n' ' ' | cut -c1-700; echo
