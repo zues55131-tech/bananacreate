@@ -1,0 +1,20 @@
+name: Sondar versoes
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in \
+            com/simibubi/create/create-1.21.1 \
+            net/createmod/ponder/Ponder-NeoForge-1.21.1 \
+            dev/engine-room/flywheel/flywheel-neoforge-1.21.1 \
+            dev/engine-room/flywheel/flywheel-neoforge-api-1.21.1 \
+            com/tterrag/registrate/Registrate ; do
+            echo "=== $u"
+            for repo in https://maven.createmod.net https://maven.ithundxr.dev/mirror https://maven.ithundxr.dev/releases https://maven.neoforged.net/releases; do
+              code=$(curl -s -o /tmp/m.xml -w "%{http_code}" "$repo/$u/maven-metadata.xml")
+              echo "$repo -> $code"
+              [ "$code" = "200" ] && grep -E "<version>|<latest>|<release>" /tmp/m.xml | tr -d ' ' | tr '\n' ' ' | tail -c 1500 && echo
+            done
+          done
