@@ -16,7 +16,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 repositories {
     mavenLocal()
     maven { url = 'https://maven.createmod.net' }          // Create, Ponder, Flywheel
-    maven { url = 'https://maven.ithundxr.dev/mirror' }     // Registrate / mirror
+    maven { url = 'https://maven.ithundxr.dev/mirror' }     // mirror
+    maven { url = 'https://maven.ithundxr.dev/snapshots' }  // Registrate
     maven { url = 'https://maven.neoforged.net/releases' }
 }
 
