@@ -1,0 +1,22 @@
+package com.example.bananacreate.registry;
+
+import com.example.bananacreate.BananaCreate;
+import com.example.bananacreate.entity.BananaProjectile;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+public class ModEntities {
+    public static final DeferredRegister<EntityType<?>> ENTITIES =
+            DeferredRegister.create(Registries.ENTITY_TYPE, BananaCreate.MOD_ID);
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BananaProjectile>> BANANA_PROJECTILE =
+            ENTITIES.register("banana_projectile", () -> EntityType.Builder
+                    .<BananaProjectile>of(BananaProjectile::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build("banana_projectile"));
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "ICI",
+    "AAA"
+  ],
+  "key": {
+    "S": {
+      "item": "create:shaft"
+    },
+    "I": {
+      "item": "minecraft:iron_bars"
+    },
+    "C": {
+      "item": "create:andesite_casing"
+    },
+    "A": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "result": {
+    "id": "bananacreate:blood_extractor",
+    "count": 1
+  }
+}

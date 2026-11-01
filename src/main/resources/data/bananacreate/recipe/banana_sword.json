@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "B",
+    "B",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "bananacreate:banana"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "bananacreate:banana_sword",
+    "count": 1
+  }
+}

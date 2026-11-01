@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " I ",
+    "EVE",
+    " G "
+  ],
+  "key": {
+    "I": {
+      "item": "create:iron_sheet"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    },
+    "V": {
+      "item": "bananacreate:blood_vial"
+    },
+    "G": {
+      "item": "minecraft:ghast_tear"
+    }
+  },
+  "result": {
+    "id": "bananacreate:titan_syringe",
+    "count": 1
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "B",
+    "S",
+    "S"
+  ],
+  "key": {
+    "B": {
+      "item": "bananacreate:banana"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "bananacreate:banana_shovel",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bananacreate:block/blood_centrifuge_end",
+    "side": "bananacreate:block/blood_centrifuge_side"
+  }
+}

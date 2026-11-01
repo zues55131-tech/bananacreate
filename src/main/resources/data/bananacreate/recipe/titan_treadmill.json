@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "LSL",
+    "BCB",
+    "III"
+  ],
+  "key": {
+    "L": {
+      "item": "create:large_cogwheel"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "B": {
+      "item": "create:brass_ingot"
+    },
+    "C": {
+      "item": "create:brass_casing"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "id": "bananacreate:titan_treadmill",
+    "count": 1
+  }
+}

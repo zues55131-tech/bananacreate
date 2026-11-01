@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " N ",
+    "PVP",
+    " E "
+  ],
+  "key": {
+    "N": {
+      "item": "bananacreate:neural_chip"
+    },
+    "P": {
+      "item": "bananacreate:chrome_plate"
+    },
+    "V": {
+      "item": "bananacreate:blood_vial"
+    },
+    "E": {
+      "item": "create:electron_tube"
+    }
+  },
+  "result": {
+    "id": "bananacreate:overclock_injector",
+    "count": 1
+  }
+}

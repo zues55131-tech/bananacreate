@@ -1,0 +1,27 @@
+package com.example.bananacreate.block;
+
+import com.example.bananacreate.block.entity.BloodCentrifugeBE;
+import com.example.bananacreate.registry.ModBlockEntities;
+import com.simibubi.create.content.kinetics.base.RotatedPillarKineticBlock;
+import com.simibubi.create.foundation.block.IBE;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
+/**
+ * Centrifuga de Sangue: maquina cinetica do Create. Recebe sangue (canos do
+ * Create ou balde) e, girando, transforma em Frascos de Sangue.
+ */
+public class BloodCentrifugeBlock extends RotatedPillarKineticBlock implements IBE<BloodCentrifugeBE> {
+    public BloodCentrifugeBlock(Properties properties) {
+        super(properties);
+    }
+
+    @Override
+    public Class<BloodCentrifugeBE> getBlockEntityClass() {
+        return BloodCentrifugeBE.class;
+    }
+
+    @Override
+    public BlockEntityType<? extends BloodCentrifugeBE> getBlockEntityType() {
+        return ModBlockEntities.BLOOD_CENTRIFUGE.get();
+    }
+}

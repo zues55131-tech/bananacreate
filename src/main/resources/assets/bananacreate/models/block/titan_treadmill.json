@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bananacreate:block/titan_treadmill_end",
+    "side": "bananacreate:block/titan_treadmill_side"
+  }
+}
