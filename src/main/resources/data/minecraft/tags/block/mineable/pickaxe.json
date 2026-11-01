@@ -6,6 +6,9 @@
     "bananacreate:titan_treadmill",
     "bananacreate:chrome_casing",
     "bananacreate:servo_arm",
-    "bananacreate:chrome_cogwheel"
+    "bananacreate:chrome_cogwheel",
+    "bananacreate:chaos_dynamo",
+    "bananacreate:death_siphon",
+    "bananacreate:fear_seal"
   ]
 }

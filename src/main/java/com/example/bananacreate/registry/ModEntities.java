@@ -2,6 +2,8 @@ package com.example.bananacreate.registry;
 
 import com.example.bananacreate.BananaCreate;
 import com.example.bananacreate.entity.BananaProjectile;
+import com.example.bananacreate.entity.CyberRocket;
+import com.example.bananacreate.entity.KasaneTeto;
 import com.example.bananacreate.entity.MiniGoblin;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
@@ -27,4 +29,19 @@ public class ModEntities {
                     .sized(0.45f, 1.05f)
                     .clientTrackingRange(10)
                     .build("mini_goblin"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<KasaneTeto>> KASANE_TETO =
+            ENTITIES.register("kasane_teto", () -> EntityType.Builder
+                    .of(KasaneTeto::new, MobCategory.CREATURE)
+                    .sized(0.6f, 1.8f)
+                    .clientTrackingRange(10)
+                    .build("kasane_teto"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<CyberRocket>> CYBER_ROCKET =
+            ENTITIES.register("cyber_rocket", () -> EntityType.Builder
+                    .<CyberRocket>of(CyberRocket::new, MobCategory.MISC)
+                    .sized(0.25f, 0.25f)
+                    .clientTrackingRange(4)
+                    .updateInterval(5)
+                    .build("cyber_rocket"));
 }

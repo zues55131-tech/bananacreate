@@ -4,7 +4,10 @@ import com.example.bananacreate.BananaCreate;
 import com.example.bananacreate.item.BananaCannonItem;
 import com.example.bananacreate.item.BananaTier;
 import com.example.bananacreate.item.BloodBladeItem;
+import com.example.bananacreate.cyber.Cyberware;
 import com.example.bananacreate.item.ChromeArmBladesItem;
+import com.example.bananacreate.item.ChromeScalpelItem;
+import com.example.bananacreate.item.ImplantItem;
 import com.example.bananacreate.item.CopyrightHammerItem;
 import com.example.bananacreate.item.GoblinHairSwordItem;
 import com.example.bananacreate.item.OthersideEyeItem;
@@ -22,6 +25,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
+import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -34,8 +38,9 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(
                     new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build())));
 
-    public static final DeferredItem<Item> BANANA_PEEL = ITEMS.register("banana_peel",
-            () -> new Item(new Item.Properties()));
+    /** Casca de banana: agora e um bloco 3D que pode ser colocado no chao. */
+    public static final DeferredItem<BlockItem> BANANA_PEEL = ITEMS.register("banana_peel",
+            () -> new BlockItem(ModBlocks.BANANA_PEEL.get(), new Item.Properties()));
 
     public static final DeferredItem<SwordItem> BANANA_SWORD = ITEMS.register("banana_sword",
             () -> new SwordItem(BananaTier.INSTANCE, new Item.Properties()
@@ -104,6 +109,9 @@ public class ModItems {
     public static final DeferredItem<DeferredSpawnEggItem> MINI_GOBLIN_SPAWN_EGG = ITEMS.register("mini_goblin_spawn_egg",
             () -> new DeferredSpawnEggItem(ModEntities.MINI_GOBLIN, 0x4a8f3a, 0xc98a3c, new Item.Properties()));
 
+    public static final DeferredItem<DeferredSpawnEggItem> KASANE_TETO_SPAWN_EGG = ITEMS.register("kasane_teto_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.KASANE_TETO, 0xd02a4a, 0x3a3a44, new Item.Properties()));
+
     public static final DeferredItem<Item> GOBLIN_HAIR_TUFT = ITEMS.register("goblin_hair_tuft",
             () -> new Item(new Item.Properties()));
 
@@ -114,6 +122,40 @@ public class ModItems {
             () -> new GoblinHairSwordItem(new Item.Properties()
                     .rarity(Rarity.RARE)
                     .attributes(SwordItem.createAttributes(Tiers.IRON, 3, -1.8f))));
+
+    // --- Cyberware corporal (instalado no corpo de V; ver pacote cyber) ---
+    public static final DeferredItem<ImplantItem> GORILLA_ARMS = ITEMS.register("gorilla_arms",
+            () -> new ImplantItem(Cyberware.GORILLA_ARMS, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final DeferredItem<ImplantItem> MANTIS_BLADES = ITEMS.register("mantis_blades",
+            () -> new ImplantItem(Cyberware.MANTIS_BLADES, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final DeferredItem<ImplantItem> PROJECTILE_LAUNCHER = ITEMS.register("projectile_launcher",
+            () -> new ImplantItem(Cyberware.PROJECTILE_LAUNCHER, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final DeferredItem<ImplantItem> MONOWIRE = ITEMS.register("monowire",
+            () -> new ImplantItem(Cyberware.MONOWIRE, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1)));
+    public static final DeferredItem<ChromeScalpelItem> CHROME_SCALPEL = ITEMS.register("chrome_scalpel",
+            () -> new ChromeScalpelItem(new Item.Properties().durability(64)));
+    public static final DeferredItem<Item> MINI_ROCKET = ITEMS.register("mini_rocket",
+            () -> new Item(new Item.Properties()));
+
+    // Itens intermediarios das montagens sequenciais do Create
+    public static final DeferredItem<SequencedAssemblyItem> INCOMPLETE_GORILLA_ARMS = ITEMS.register("incomplete_gorilla_arms",
+            () -> new SequencedAssemblyItem(new Item.Properties()));
+    public static final DeferredItem<SequencedAssemblyItem> INCOMPLETE_MANTIS_BLADES = ITEMS.register("incomplete_mantis_blades",
+            () -> new SequencedAssemblyItem(new Item.Properties()));
+    public static final DeferredItem<SequencedAssemblyItem> INCOMPLETE_PROJECTILE_LAUNCHER = ITEMS.register("incomplete_projectile_launcher",
+            () -> new SequencedAssemblyItem(new Item.Properties()));
+    public static final DeferredItem<SequencedAssemblyItem> INCOMPLETE_MONOWIRE = ITEMS.register("incomplete_monowire",
+            () -> new SequencedAssemblyItem(new Item.Properties()));
+
+    // --- Elementos paranormais: essencias (feitas por maquinas/ventiladores do Create) ---
+    public static final DeferredItem<Item> DEATH_ESSENCE = ITEMS.register("death_essence",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> CHAOS_SHARD = ITEMS.register("chaos_shard",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> FEAR_ESSENCE = ITEMS.register("fear_essence",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final DeferredItem<Item> KNOWLEDGE_ESSENCE = ITEMS.register("knowledge_essence",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     // --- Block items ---
     public static final DeferredItem<BlockItem> CHROME_CASING = ITEMS.registerSimpleBlockItem("chrome_casing", ModBlocks.CHROME_CASING);
@@ -126,4 +168,7 @@ public class ModItems {
     public static final DeferredItem<BlockItem> BLOOD_EXTRACTOR = ITEMS.registerSimpleBlockItem("blood_extractor", ModBlocks.BLOOD_EXTRACTOR);
     public static final DeferredItem<BlockItem> BLOOD_CENTRIFUGE = ITEMS.registerSimpleBlockItem("blood_centrifuge", ModBlocks.BLOOD_CENTRIFUGE);
     public static final DeferredItem<BlockItem> TITAN_TREADMILL = ITEMS.registerSimpleBlockItem("titan_treadmill", ModBlocks.TITAN_TREADMILL);
+    public static final DeferredItem<BlockItem> CHAOS_DYNAMO = ITEMS.registerSimpleBlockItem("chaos_dynamo", ModBlocks.CHAOS_DYNAMO);
+    public static final DeferredItem<BlockItem> DEATH_SIPHON = ITEMS.registerSimpleBlockItem("death_siphon", ModBlocks.DEATH_SIPHON);
+    public static final DeferredItem<BlockItem> FEAR_SEAL = ITEMS.registerSimpleBlockItem("fear_seal", ModBlocks.FEAR_SEAL);
 }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "FSF",
+    "BCB",
+    "GGG"
+  ],
+  "key": {
+    "F": {
+      "item": "bananacreate:fear_essence"
+    },
+    "S": {
+      "item": "create:shaft"
+    },
+    "B": {
+      "item": "create:brass_ingot"
+    },
+    "C": {
+      "item": "create:brass_casing"
+    },
+    "G": {
+      "item": "create:brass_sheet"
+    }
+  },
+  "result": {
+    "id": "bananacreate:fear_seal",
+    "count": 1
+  }
+}

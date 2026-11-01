@@ -2,6 +2,10 @@ package com.example.bananacreate.registry;
 
 import com.example.bananacreate.BananaCreate;
 import com.example.bananacreate.block.BananaLeavesBlock;
+import com.example.bananacreate.block.BananaPeelBlock;
+import com.example.bananacreate.block.ChaosDynamoBlock;
+import com.example.bananacreate.block.DeathSiphonBlock;
+import com.example.bananacreate.block.FearSealBlock;
 import com.example.bananacreate.block.BananaTreeGrower;
 import com.example.bananacreate.block.BloodCentrifugeBlock;
 import com.example.bananacreate.block.BloodExtractorBlock;
@@ -14,6 +18,7 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -61,5 +66,24 @@ public class ModBlocks {
     // Gerador cinetico movido por titas
     public static final DeferredBlock<TitanTreadmillBlock> TITAN_TREADMILL = BLOCKS.register("titan_treadmill",
             () -> new TitanTreadmillBlock(BlockBehaviour.Properties.of()
+                    .strength(4.0f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+
+    // Casca de banana 3D (escorrega!)
+    public static final DeferredBlock<BananaPeelBlock> BANANA_PEEL = BLOCKS.register("banana_peel",
+            () -> new BananaPeelBlock(BlockBehaviour.Properties.of()
+                    .strength(0.1f).noOcclusion().noCollission().sound(SoundType.SLIME_BLOCK)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    // Elementos paranormais acoplados ao Create
+    public static final DeferredBlock<ChaosDynamoBlock> CHAOS_DYNAMO = BLOCKS.register("chaos_dynamo",
+            () -> new ChaosDynamoBlock(BlockBehaviour.Properties.of()
+                    .strength(4.0f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<DeathSiphonBlock> DEATH_SIPHON = BLOCKS.register("death_siphon",
+            () -> new DeathSiphonBlock(BlockBehaviour.Properties.of()
+                    .strength(4.0f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<FearSealBlock> FEAR_SEAL = BLOCKS.register("fear_seal",
+            () -> new FearSealBlock(BlockBehaviour.Properties.of()
                     .strength(4.0f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
 }

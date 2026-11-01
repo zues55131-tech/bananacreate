@@ -1,6 +1,8 @@
 package com.example.bananacreate;
 
+import com.example.bananacreate.entity.KasaneTeto;
 import com.example.bananacreate.entity.MiniGoblin;
+import com.example.bananacreate.registry.ModAttachments;
 import com.example.bananacreate.registry.ModBlockEntities;
 import com.example.bananacreate.registry.ModBlocks;
 import com.example.bananacreate.registry.ModCreativeTabs;
@@ -29,6 +31,7 @@ public class BananaCreate {
         ModBlockEntities.BLOCK_ENTITIES.register(modBus);
         ModEntities.ENTITIES.register(modBus);
         ModCreativeTabs.TABS.register(modBus);
+        ModAttachments.ATTACHMENTS.register(modBus);
 
         modBus.addListener(BananaCreate::registerCapabilities);
         modBus.addListener(BananaCreate::registerAttributes);
@@ -37,10 +40,14 @@ public class BananaCreate {
 
     private static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntities.MINI_GOBLIN.get(), MiniGoblin.createAttributes().build());
+        event.put(ModEntities.KASANE_TETO.get(), KasaneTeto.createAttributes().build());
     }
 
     private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(ModEntities.MINI_GOBLIN.get(), SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(ModEntities.KASANE_TETO.get(), SpawnPlacementTypes.ON_GROUND,
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules,
                 RegisterSpawnPlacementsEvent.Operation.OR);
     }

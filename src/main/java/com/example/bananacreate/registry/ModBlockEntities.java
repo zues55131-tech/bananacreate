@@ -2,6 +2,9 @@ package com.example.bananacreate.registry;
 
 import com.example.bananacreate.BananaCreate;
 import com.example.bananacreate.block.entity.BloodCentrifugeBE;
+import com.example.bananacreate.block.entity.ChaosDynamoBE;
+import com.example.bananacreate.block.entity.DeathSiphonBE;
+import com.example.bananacreate.block.entity.FearSealBE;
 import com.example.bananacreate.block.entity.BloodExtractorBE;
 import com.example.bananacreate.block.entity.TitanTreadmillBE;
 import net.minecraft.core.registries.Registries;
@@ -24,4 +27,16 @@ public class ModBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TitanTreadmillBE>> TITAN_TREADMILL =
             BLOCK_ENTITIES.register("titan_treadmill", () ->
                     BlockEntityType.Builder.of(TitanTreadmillBE::new, ModBlocks.TITAN_TREADMILL.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<ChaosDynamoBE>> CHAOS_DYNAMO =
+            BLOCK_ENTITIES.register("chaos_dynamo", () ->
+                    BlockEntityType.Builder.of(ChaosDynamoBE::new, ModBlocks.CHAOS_DYNAMO.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<DeathSiphonBE>> DEATH_SIPHON =
+            BLOCK_ENTITIES.register("death_siphon", () ->
+                    BlockEntityType.Builder.of(DeathSiphonBE::new, ModBlocks.DEATH_SIPHON.get()).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FearSealBE>> FEAR_SEAL =
+            BLOCK_ENTITIES.register("fear_seal", () ->
+                    BlockEntityType.Builder.of(FearSealBE::new, ModBlocks.FEAR_SEAL.get()).build(null));
 }
