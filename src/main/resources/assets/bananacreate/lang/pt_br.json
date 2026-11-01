@@ -13,7 +13,7 @@
   "item.bananacreate.blood_blade": "Lâmina de Sangue",
   "item.bananacreate.otherside_eye": "Olho do Outro Lado",
   "item.bananacreate.titan_syringe": "Seringa de Titã",
-  "item.bananacreate.copyright_hammer": "Martelo do Copyright",
+  "item.bananacreate.copyright_hammer": "Martelo Portátil do Copyright",
   "item.bananacreate.chrome_plate": "Placa Cromada",
   "item.bananacreate.neural_chip": "Chip Neural",
   "item.bananacreate.chrome_arm_blades": "Lâminas de Braço Cromadas",
@@ -29,5 +29,13 @@
   "block.bananacreate.titan_treadmill": "Esteira de Titã",
   "entity.bananacreate.banana_projectile": "Projétil de Banana",
   "message.bananacreate.strike": "%s recebeu uma advertência de copyright (%s/3)",
-  "message.bananacreate.takedown": "%s foi removido por violação de direitos autorais"
+  "message.bananacreate.takedown": "%s foi removido por violação de direitos autorais",
+  "entity.bananacreate.mini_goblin": "Mini Goblin",
+  "item.bananacreate.mini_goblin_spawn_egg": "Ovo de Mini Goblin",
+  "item.bananacreate.goblin_hair_tuft": "Tufo de Cabelo de Goblin",
+  "item.bananacreate.hair_plate": "Chapa de Cabelo",
+  "item.bananacreate.goblin_hair_sword": "Espada de Fio de Goblin",
+  "block.bananacreate.chrome_casing": "Revestimento Cromado",
+  "block.bananacreate.servo_arm": "Braço Servo",
+  "block.bananacreate.chrome_cogwheel": "Engrenagem Cromada"
 }

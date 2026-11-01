@@ -3,7 +3,7 @@
   "category": "equipment",
   "pattern": [
     "PWP",
-    "PSP",
+    "PNP",
     " S "
   ],
   "key": {
@@ -11,7 +11,10 @@
       "item": "bananacreate:chrome_plate"
     },
     "W": {
-      "item": "minecraft:writable_book"
+      "item": "minecraft:glass_pane"
+    },
+    "N": {
+      "item": "bananacreate:neural_chip"
     },
     "S": {
       "item": "minecraft:stick"

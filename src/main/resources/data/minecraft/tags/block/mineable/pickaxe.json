@@ -3,6 +3,9 @@
   "values": [
     "bananacreate:blood_extractor",
     "bananacreate:blood_centrifuge",
-    "bananacreate:titan_treadmill"
+    "bananacreate:titan_treadmill",
+    "bananacreate:chrome_casing",
+    "bananacreate:servo_arm",
+    "bananacreate:chrome_cogwheel"
   ]
 }

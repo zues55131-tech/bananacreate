@@ -6,6 +6,7 @@ import com.example.bananacreate.block.BananaTreeGrower;
 import com.example.bananacreate.block.BloodCentrifugeBlock;
 import com.example.bananacreate.block.BloodExtractorBlock;
 import com.example.bananacreate.block.TitanTreadmillBlock;
+import com.example.bananacreate.block.ServoArmBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -44,6 +45,18 @@ public class ModBlocks {
     public static final DeferredBlock<BloodCentrifugeBlock> BLOOD_CENTRIFUGE = BLOCKS.register("blood_centrifuge",
             () -> new BloodCentrifugeBlock(BlockBehaviour.Properties.of()
                     .strength(3.5f).requiresCorrectToolForDrops().noOcclusion().sound(SoundType.METAL)));
+
+    // Blocos roboticos cyberpunk (decorativos)
+    public static final DeferredBlock<Block> CHROME_CASING = BLOCKS.register("chrome_casing",
+            () -> new Block(BlockBehaviour.Properties.of().strength(3.0f).requiresCorrectToolForDrops().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<ServoArmBlock> SERVO_ARM = BLOCKS.register("servo_arm",
+            () -> new ServoArmBlock(BlockBehaviour.Properties.of().strength(3.0f).requiresCorrectToolForDrops()
+                    .noOcclusion().sound(SoundType.METAL)));
+
+    public static final DeferredBlock<RotatedPillarBlock> CHROME_COGWHEEL = BLOCKS.register("chrome_cogwheel",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().strength(3.0f).requiresCorrectToolForDrops()
+                    .noOcclusion().sound(SoundType.METAL)));
 
     // Gerador cinetico movido por titas
     public static final DeferredBlock<TitanTreadmillBlock> TITAN_TREADMILL = BLOCKS.register("titan_treadmill",

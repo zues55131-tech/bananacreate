@@ -17,6 +17,7 @@ public class ClientSetup {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.BANANA_PROJECTILE.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.MINI_GOBLIN.get(), MiniGoblinRenderer::new);
     }
 
     /** Sangue = textura de agua tingida de vermelho. */

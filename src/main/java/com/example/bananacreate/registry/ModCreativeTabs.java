@@ -41,6 +41,15 @@ public class ModCreativeTabs {
                         output.accept(ModItems.TITAN_SYRINGE.get());
                         output.accept(ModItems.TITAN_TREADMILL.get());
                         output.accept(ModItems.COPYRIGHT_HAMMER.get());
+                        // Mini goblin
+                        output.accept(ModItems.MINI_GOBLIN_SPAWN_EGG.get());
+                        output.accept(ModItems.GOBLIN_HAIR_TUFT.get());
+                        output.accept(ModItems.HAIR_PLATE.get());
+                        output.accept(ModItems.GOBLIN_HAIR_SWORD.get());
+                        // Blocos roboticos
+                        output.accept(ModItems.CHROME_CASING.get());
+                        output.accept(ModItems.SERVO_ARM.get());
+                        output.accept(ModItems.CHROME_COGWHEEL.get());
                         // Cyberware
                         output.accept(ModItems.CHROME_PLATE.get());
                         output.accept(ModItems.NEURAL_CHIP.get());

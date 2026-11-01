@@ -6,6 +6,7 @@ import com.example.bananacreate.item.BananaTier;
 import com.example.bananacreate.item.BloodBladeItem;
 import com.example.bananacreate.item.ChromeArmBladesItem;
 import com.example.bananacreate.item.CopyrightHammerItem;
+import com.example.bananacreate.item.GoblinHairSwordItem;
 import com.example.bananacreate.item.OthersideEyeItem;
 import com.example.bananacreate.item.OverclockInjectorItem;
 import com.example.bananacreate.item.TitanSyringeItem;
@@ -21,6 +22,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -98,7 +100,25 @@ public class ModItems {
     public static final DeferredItem<OverclockInjectorItem> OVERCLOCK_INJECTOR = ITEMS.register("overclock_injector",
             () -> new OverclockInjectorItem(new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(16)));
 
+    // --- Mini Goblin ---
+    public static final DeferredItem<DeferredSpawnEggItem> MINI_GOBLIN_SPAWN_EGG = ITEMS.register("mini_goblin_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.MINI_GOBLIN, 0x4a8f3a, 0xc98a3c, new Item.Properties()));
+
+    public static final DeferredItem<Item> GOBLIN_HAIR_TUFT = ITEMS.register("goblin_hair_tuft",
+            () -> new Item(new Item.Properties()));
+
+    public static final DeferredItem<Item> HAIR_PLATE = ITEMS.register("hair_plate",
+            () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+
+    public static final DeferredItem<GoblinHairSwordItem> GOBLIN_HAIR_SWORD = ITEMS.register("goblin_hair_sword",
+            () -> new GoblinHairSwordItem(new Item.Properties()
+                    .rarity(Rarity.RARE)
+                    .attributes(SwordItem.createAttributes(Tiers.IRON, 3, -1.8f))));
+
     // --- Block items ---
+    public static final DeferredItem<BlockItem> CHROME_CASING = ITEMS.registerSimpleBlockItem("chrome_casing", ModBlocks.CHROME_CASING);
+    public static final DeferredItem<BlockItem> SERVO_ARM = ITEMS.registerSimpleBlockItem("servo_arm", ModBlocks.SERVO_ARM);
+    public static final DeferredItem<BlockItem> CHROME_COGWHEEL = ITEMS.registerSimpleBlockItem("chrome_cogwheel", ModBlocks.CHROME_COGWHEEL);
     public static final DeferredItem<BlockItem> BANANA_LOG = ITEMS.registerSimpleBlockItem("banana_log", ModBlocks.BANANA_LOG);
     public static final DeferredItem<BlockItem> BANANA_PLANKS = ITEMS.registerSimpleBlockItem("banana_planks", ModBlocks.BANANA_PLANKS);
     public static final DeferredItem<BlockItem> BANANA_LEAVES = ITEMS.registerSimpleBlockItem("banana_leaves", ModBlocks.BANANA_LEAVES);

@@ -2,6 +2,7 @@ package com.example.bananacreate.registry;
 
 import com.example.bananacreate.BananaCreate;
 import com.example.bananacreate.entity.BananaProjectile;
+import com.example.bananacreate.entity.MiniGoblin;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -19,4 +20,11 @@ public class ModEntities {
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build("banana_projectile"));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<MiniGoblin>> MINI_GOBLIN =
+            ENTITIES.register("mini_goblin", () -> EntityType.Builder
+                    .of(MiniGoblin::new, MobCategory.CREATURE)
+                    .sized(0.45f, 1.05f)
+                    .clientTrackingRange(10)
+                    .build("mini_goblin"));
 }

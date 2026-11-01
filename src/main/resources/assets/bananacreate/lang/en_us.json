@@ -13,7 +13,7 @@
   "item.bananacreate.blood_blade": "Blood Blade",
   "item.bananacreate.otherside_eye": "Eye of the Other Side",
   "item.bananacreate.titan_syringe": "Titan Syringe",
-  "item.bananacreate.copyright_hammer": "Copyright Hammer",
+  "item.bananacreate.copyright_hammer": "Handheld Copyright Hammer",
   "item.bananacreate.chrome_plate": "Chrome Plate",
   "item.bananacreate.neural_chip": "Neural Chip",
   "item.bananacreate.chrome_arm_blades": "Chrome Arm Blades",
@@ -29,5 +29,13 @@
   "block.bananacreate.titan_treadmill": "Titan Treadmill",
   "entity.bananacreate.banana_projectile": "Banana Projectile",
   "message.bananacreate.strike": "%s received a copyright strike (%s/3)",
-  "message.bananacreate.takedown": "%s was taken down for copyright infringement"
+  "message.bananacreate.takedown": "%s was taken down for copyright infringement",
+  "entity.bananacreate.mini_goblin": "Mini Goblin",
+  "item.bananacreate.mini_goblin_spawn_egg": "Mini Goblin Spawn Egg",
+  "item.bananacreate.goblin_hair_tuft": "Goblin Hair Tuft",
+  "item.bananacreate.hair_plate": "Hair Plate",
+  "item.bananacreate.goblin_hair_sword": "Goblin Hair Sword",
+  "block.bananacreate.chrome_casing": "Chrome Casing",
+  "block.bananacreate.servo_arm": "Servo Arm",
+  "block.bananacreate.chrome_cogwheel": "Chrome Cogwheel"
 }

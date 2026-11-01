@@ -1,5 +1,6 @@
 package com.example.bananacreate;
 
+import com.example.bananacreate.entity.MiniGoblin;
 import com.example.bananacreate.registry.ModBlockEntities;
 import com.example.bananacreate.registry.ModBlocks;
 import com.example.bananacreate.registry.ModCreativeTabs;
@@ -9,7 +10,12 @@ import com.example.bananacreate.registry.ModItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 
 @Mod(BananaCreate.MOD_ID)
 public class BananaCreate {
@@ -25,6 +31,18 @@ public class BananaCreate {
         ModCreativeTabs.TABS.register(modBus);
 
         modBus.addListener(BananaCreate::registerCapabilities);
+        modBus.addListener(BananaCreate::registerAttributes);
+        modBus.addListener(BananaCreate::registerSpawnPlacements);
+    }
+
+    private static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(ModEntities.MINI_GOBLIN.get(), MiniGoblin.createAttributes().build());
+    }
+
+    private static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(ModEntities.MINI_GOBLIN.get(), SpawnPlacementTypes.ON_GROUND,
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Mob::checkMobSpawnRules,
+                RegisterSpawnPlacementsEvent.Operation.OR);
     }
 
     /** Expoe os tanques das maquinas para canos/bombas do Create. */

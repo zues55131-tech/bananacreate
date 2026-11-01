@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " H ",
+    "HIH",
+    " S "
+  ],
+  "key": {
+    "H": {
+      "item": "bananacreate:hair_plate"
+    },
+    "I": {
+      "item": "create:iron_sheet"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "bananacreate:goblin_hair_sword",
+    "count": 1
+  }
+}
